@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gwc2byary-nodejs-gitops
+  description: This is GitOps manifest for gwc2byary-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=gwc2byary-nodejs
+    backstage.io/kubernetes-id: gwc2byary-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: gwc2byary-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gwc2byary-nodejs
